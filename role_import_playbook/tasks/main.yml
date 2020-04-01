@@ -1,0 +1,4 @@
+---
+# tasks file for role_import_playbook
+- debug:
+    msg: "Role has been triggered"

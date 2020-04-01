@@ -1,0 +1,6 @@
+---
+- hosts: "{{ serverIP }}"
+  tasks:
+    - name: "Include role"
+      include_role: role_import_playbook
+
