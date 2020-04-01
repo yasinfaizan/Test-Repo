@@ -6,5 +6,5 @@
   add_host:
      name: TargetServerName
      server_ip: "{{ ansible_hostname }}"
-- name: "Approve the Agent in the SCOM Management Server"
-  import_playbook: test.yml
+     #- name: "Approve the Agent in the SCOM Management Server"
+     # import_playbook: test.yml
