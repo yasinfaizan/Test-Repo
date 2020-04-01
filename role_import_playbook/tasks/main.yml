@@ -8,5 +8,3 @@
      server_ip: "{{ ansible_hostname }}"
 - name: "Approve the Agent in the SCOM Management Server"
   import_playbook: test.yml
-  vars:
-    scom_server: "{{ test_server }}"
