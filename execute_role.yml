@@ -7,8 +7,8 @@
       vars:
         test_server: "35.232.20.237"
 
-- name: "Approve_SCOM"
-  import_playbook: test.yml
-  vars:
-    scom_server: "10.128.0.9"
+        #- name: "Approve_SCOM"
+        #import_playbook: test.yml
+        #vars:
+        #scom_server: "10.128.0.9"
 
