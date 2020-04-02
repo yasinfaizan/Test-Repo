@@ -9,7 +9,7 @@
 
 - name: "Execute command on remote server"
   win_shell: |
-          Invoke-Command -ComputerName "{{ test_server }}" -scriptblock { write-host $env:ComputerName }
+          Invoke-Command -ComputerName "{{ test_server }}" -scriptblock { get-service }
   register: remote_status
 
 - debug:
