@@ -6,5 +6,5 @@
       include_role:
         name: role_rename_disk_drives
       vars:
-        rename_disks_tmp_dir: "C:\\rename-drives"
+        rename_disks_temp_dir: "C:\\rename-drives"
         json_file_name: "drives.json"
