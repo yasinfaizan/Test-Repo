@@ -34,5 +34,5 @@
       vars:
         json_file: "{{ json_file_name }}"
       with_items:
-        - ../templates/renameDisks.ps1.j2
+        - ../templates/renameDrives.ps1.j2
       
