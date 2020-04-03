@@ -1,0 +1,38 @@
+---
+# tasks file for role_rename_disk_drives
+- name: "Check for a Rename Drives Temp directory"
+  win_stat:
+    path: "{{ rename_disks_temp_dir }}"
+  register: temp_dir_result
+
+- name: "Delete the Rename Drives temp directory if present"
+  win_file:
+    path: "{{ rename_disks_temp_dir }}"
+    state: absent
+  ignore_errors: true
+  when: temp_dir_result.stat.exists == true
+
+- name: "Create a Rename Drives temp directory for copying the json content"
+  win_file:
+    path: "{{ rename_disks_temp_dir }}"
+    state: directory
+  ignore_errors: true
+  register: dir_creation_result
+
+- name: "Start the block"  
+  block:
+    - name: "Write the content to a json file"
+      copy:
+        content: "{{ windowsDrives }}"
+        dest: "{{ rename_disks_temp_dir }}\\{{ json_file_name }}"
+      register: content_result
+      
+    - name: "Copy the PS Script to the directory "
+      win_template:
+        src: "{{ item }}"
+        dest: "{{ rename_disks_temp_dir }}\\{{ item | basename | regex_replace('\\.j2','') }}"
+      vars:
+        json_file: "{{ json_file_name }}"
+      with_items:
+        - ../templates/renameDisks.ps1.j2
+      
