@@ -1,0 +1,10 @@
+---
+- hosts: "{{ serverIP }}"
+  gather_facts: true
+  tasks:
+    - name: "Include the role"
+      include_role:
+        name: role_rename_disk_drives
+      vars:
+        rename_disks_tmp_dir: "C:\\rename-drives"
+        json_file_name: "drives.json"
