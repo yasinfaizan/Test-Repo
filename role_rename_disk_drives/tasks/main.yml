@@ -22,7 +22,7 @@
 - name: "Start the block"  
   block:
     - name: "Write the content to a json file"
-      copy:
+      win_copy:
         content: "{{ windowsDrives }}"
         dest: "{{ rename_disks_temp_dir }}\\{{ json_file_name }}"
       register: content_result
