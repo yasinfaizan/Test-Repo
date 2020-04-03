@@ -35,4 +35,11 @@
         json_file: "{{ json_file_name }}"
       with_items:
         - ../templates/renameDrives.ps1.j2
+    - name: "run the shell script"
+      win_shell: .\renameDrives.ps1
+      args:
+        chdir: "{{ rename_disks_temp_dir }}"
+      register: script_status
+    - debug:
+        var: script_status
       
