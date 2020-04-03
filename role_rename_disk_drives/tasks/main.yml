@@ -44,5 +44,5 @@
         chdir: "{{ rename_disks_temp_dir }}"
       register: script_status
     - debug:
-        var: script_status
+        var: script_status.stdout_lines
       
