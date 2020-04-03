@@ -2,6 +2,6 @@
     $DriveDataJSON = (Get-Content -path "{{ json_file }}" -Raw ).ToUpper() | ConvertFrom-Json
 
 #Stop Windows services to stop pop up Gui boxes
-    Stop-Service -Name ShellHWDetection
+  Write-Host $DriveDataJSON
 
  
