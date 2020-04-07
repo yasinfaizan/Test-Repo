@@ -23,33 +23,9 @@
 - debug:
     var: dir_creation_result
     
-- name: "get the powershell version"
+- name: "get the ie version"
   win_shell: |
        (Get-Item 'C:\Program Files\Internet Explorer\iexplore.exe').VersionInfo.ProductVersion
   register: ie_version
-  
-- debug: 
+- debug:
     var: ie_version
-  block:
-    - name: "Write the content to a json file"
-      win_copy:
-        content: "{{ windowsDrives }}"
-        dest: "{{ rename_disks_temp_dir }}\\{{ json_file_name }}"
-      register: content_result
-      
-    - name: "Copy the PS Script to the directory "
-      win_template:
-        src: "{{ item }}"
-        dest: "{{ rename_disks_temp_dir }}\\{{ item | basename | regex_replace('\\.j2','') }}"
-      vars:
-        json_file: "{{ json_file_name }}"
-      with_items:
-        - ../templates/renameDrives.ps1.j2
-    - name: "run the shell script"
-      win_shell: .\renameDrives.ps1
-      args:
-        chdir: "{{ rename_disks_temp_dir }}"
-      register: script_status
-    - debug:
-        var: script_status.stdout_lines
-      
