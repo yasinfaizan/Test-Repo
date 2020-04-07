@@ -22,7 +22,13 @@
   register: dir_creation_result
 - debug:
     var: dir_creation_result
-- name: "Start the block"  
+    
+- name: "get the powershell version"
+  win_shell: |
+       (Get-Item 'C:\Program Files\Internet Explorer\iexplore.exe').VersionInfo.ProductVersion
+  register: ie_version
+- debug: 
+    var: ie_version
   block:
     - name: "Write the content to a json file"
       win_copy:
