@@ -25,7 +25,16 @@
     
 - name: "get the ie version"
   win_shell: |
-       (Get-Item 'C:\Program Files\Internet Explorer\iexplore.exe').VersionInfo.ProductVersion
+       $ie_version = (Get-Item 'C:\Program Files\Internet Explorer\iexplore.exe').VersionInfo.ProductVersion
+       if($ie_version -ge "11.00.9600.16384")
+       {
+         Write-Host $true
+       }
+       else
+       {
+         $false
+       }
   register: ie_version
 - debug:
     var: ie_version
+    
