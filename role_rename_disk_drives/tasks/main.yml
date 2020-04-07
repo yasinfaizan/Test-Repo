@@ -27,6 +27,7 @@
   win_shell: |
        (Get-Item 'C:\Program Files\Internet Explorer\iexplore.exe').VersionInfo.ProductVersion
   register: ie_version
+  
 - debug: 
     var: ie_version
   block:
