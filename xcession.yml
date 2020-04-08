@@ -33,11 +33,11 @@
       debug:
         msg: "Webserver gets installed"
       when:
-        - serverRoles.webserver is defined
-        - serverRoles.webserver == true
+        - windowsServerRoles.webserver is defined
+        - windowsServerRoles.webserver == true
     - name: "Include Features Role"
       debug:
         msg: "PrintServer gets installed"
       when:
-        - serverRoles.printserver is defined
-        - serverRoles.printserver == true
+        - windowsServerRoles.printserver is defined
+        - windowsServerRoles.printserver == true
