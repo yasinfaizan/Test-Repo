@@ -32,10 +32,8 @@
     - name: "Include Features Role"
       debug:
         msg: "Webserver gets installed"
-      when:
-        - windowsServerRoles.webserver
+      when: windowsServerRoles[0] == 'webserver'
     - name: "Include Features Role"
       debug:
         msg: "PrintServer gets installed"
-      when:
-        - windowsServerRoles.printserver
+      when: windowsServerRoles[1] == 'printserver'
