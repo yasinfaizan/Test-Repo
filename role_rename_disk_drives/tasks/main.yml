@@ -37,4 +37,11 @@
   register: ie_version
 - debug:
     var: ie_version
-    
+- debug:
+    msg: "It's true"
+  when: ie_version.stdout_lines[0] == "True"
+  
+  
+- debug:
+    msg: "It's false"
+  when: ie_version.stdout_lines[0] == "False"
