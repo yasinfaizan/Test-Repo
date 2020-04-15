@@ -8,7 +8,4 @@
         msg: "This Updates the workinfo and the token is {{ Token }}"
     - debug:
         msg: "The message is {{ var1 }}"
-    - set_stats:
-        data:
-          var2: "Splunk Installation Started"
         
