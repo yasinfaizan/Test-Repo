@@ -6,4 +6,4 @@
         msg: "This playbook installs sophos"
     - set_stats:
         data:
-          var2: "Splunk installation started"
+          next_var: "Splunk installation started"
