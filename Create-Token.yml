@@ -7,3 +7,4 @@
     - set_stats:
         data:
           Token: "token1234"
+          next_var: "Sophos Installation has started"
