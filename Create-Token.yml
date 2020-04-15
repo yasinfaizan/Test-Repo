@@ -1,0 +1,9 @@
+---
+- hosts: all
+  gather_facts: true
+  tasks:
+    - debug:
+        msg: "{{ ansible_hostname }} is the localhost"
+     - set_stats:
+         data:
+           Token: "token1234"
