@@ -4,3 +4,6 @@
   tasks:
     - debug:
         msg: "This playbook installs sophos"
+    - set_stats:
+        data:
+          var2: "Splunk installation started"
