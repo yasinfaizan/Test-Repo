@@ -5,4 +5,4 @@
     - debug:
         msg: "{{ ansible_hostname }}"
     - debug:
-        msg: " This is the extra varibale {{ e_var }}"
+        msg: " This is the extra varibale {{ e_var1 }}"
