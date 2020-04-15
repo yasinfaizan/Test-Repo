@@ -3,7 +3,7 @@
   gather_facts: true
   tasks:
     - set_fact:
-        var1: "{{ var2 }}"
+        var1: "{{ next_var }}"
     - debug:
         msg: "This Updates the workinfo and the token is {{ Token }}"
     - debug:
