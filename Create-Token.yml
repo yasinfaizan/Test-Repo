@@ -13,3 +13,8 @@
     - debug:
          msg: "Not Matched"
       when: not data1 == 1
+    - set_fact:
+        data1: 2
+    - debug:
+        msg: "Matched"
+      when: data1 == 2
