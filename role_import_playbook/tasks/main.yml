@@ -7,4 +7,5 @@
      name: TargetServerName
      server_ip: "{{ ansible_hostname }}"
 - name: "Include another role"
-  include_role: role_rename_disk_drives
+  include_role: 
+    name: role_rename_disk_drives
