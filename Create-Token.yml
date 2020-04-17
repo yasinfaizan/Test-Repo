@@ -8,3 +8,8 @@
         data:
           Token: "token1234"
           next_var: "Sophos Installation has started"
+    - set_fact:
+        data1: 1
+    - debug:
+         msg: "Matched"
+      when: data1 == "1"
