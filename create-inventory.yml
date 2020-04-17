@@ -8,7 +8,7 @@
         methos: POST
         url_username: admin
         url_password: password
-        body_format:json
+        body_format: json
         body: { "name": "bbc-test-new-test", "description": "test server for bbc", "enabled": true}
         validate_certs: false
         force_basic_auth: true
