@@ -6,15 +6,5 @@
   add_host:
      name: TargetServerName
      server_ip: "{{ ansible_hostname }}"
-
-- name: "Execute command on remote server"
-  win_shell: |
-          Invoke-Command -ComputerName "{{ test_server }}" -scriptblock { get-service }
-  register: remote_status
-
-- debug:
-    var: remote_status
-- debug:
-    msg: "{{ ansible_hostname }}"
-     #- name: "Approve the Agent in the SCOM Management Server"
-     # import_playbook: test.yml
+- name: "Include another role"
+  include_role: role_rename_disk_drives
