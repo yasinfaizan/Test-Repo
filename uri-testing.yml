@@ -17,3 +17,9 @@
       register: this
     - debug:
         var: this
+    - shell: whoami
+      register: shell_user
+      delegate_to: localhost
+      
+    - debug:
+        var: shell_user
