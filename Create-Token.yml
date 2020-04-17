@@ -12,4 +12,4 @@
         data1: 1
     - debug:
          msg: "Matched"
-      when: data1 == "1"
+      when: data1 == 1
