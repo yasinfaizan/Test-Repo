@@ -2,6 +2,20 @@
 - hosts: localhost
   gather_facts: true
   tasks:
+    - name: "Create a new host"
+      uri:
+        url: "http://35.222.13.103/api/v2/inventories/2/hosts/"
+        methos: POST
+        url_username: admin
+        url_password: password
+        body_format:json
+        body: { "name": "bbc-test-new-test", "description": "test server for bbc", "enabled": true}
+        validate_certs: false
+        force_basic_auth: true
+        return_content: yes
+        status_code: 201,400
+      register: this
     - debug:
-        msg: "Matched"
-      when: serverIP == "10.1.1.1"
+        var: this
+      
+        
