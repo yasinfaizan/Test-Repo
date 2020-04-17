@@ -7,7 +7,7 @@
     - name: Test URI
       uri:
         url: https://jsonplaceholder.typicode.com/todos/1
-      return_content: yes
+        return_content: yes
       register: this_var
       delegate_to: localhost
     - debug:
