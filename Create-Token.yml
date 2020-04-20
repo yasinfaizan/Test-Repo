@@ -2,10 +2,10 @@
 - hosts: all
   gather_facts: true
   tasks:
-    - win_file:
-        name: "C:\\Test_temp"
-        state: directory
-      register: file_name
+    - set_fact:
+        var123: " "
+    - debug:
+        var: var123
     - debug:
         msg: Created
       when: file_name.failed == false
