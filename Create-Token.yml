@@ -2,6 +2,12 @@
 - hosts: all
   gather_facts: true
   tasks:
+    - win_file:
+        name: "C:\\Test.txt"
+        state: present
+      register: file_name
+    - debug:
+        var: file_name
     - debug:
         msg: "{{ ansible_hostname }} is the localhost"
     - set_stats:
