@@ -11,7 +11,10 @@
       when: file_name.failed == false
     - debug:
         msg: "Again Created"
-      when: file_name.failed == false
+      when: file_name.failed == "false"
+    - debug:
+        msg: "Again Created"
+      when: file_name.failed == "False"
     - debug:
         msg: "Not Created"
       when: file_name.failed == true
