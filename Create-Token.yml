@@ -7,7 +7,7 @@
     - debug:
         var: var123
     - debug:
-        msg: "{{ ansible_hostname }} is the localhost and sophos_version is "{{ lookup('env','sophos_version') }}""
+        msg: "{{ ansible_hostname }} is the localhost and sophos_version is {{ lookup('env','sophos_version') }}""
     - set_stats:
         data:
           Token: "token1234"
