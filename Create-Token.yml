@@ -7,7 +7,14 @@
         state: directory
       register: file_name
     - debug:
-        var: file_name
+        msg: Created
+      when: file_name.failed == false
+    - debug:
+        msg: "Again Created"
+      when: file_name.failed == false
+    - debug:
+        msg: "Not Created"
+      when: file_name.failed == true
     - debug:
         msg: "{{ ansible_hostname }} is the localhost"
     - set_stats:
