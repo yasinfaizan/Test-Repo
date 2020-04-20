@@ -3,7 +3,7 @@
   gather_facts: true
   tasks:
     - win_file:
-        name: "C:\\Test.txt"
+        name: "C:\Test_temp.txt"
         state: file
       register: file_name
     - debug:
