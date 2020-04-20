@@ -3,8 +3,8 @@
   gather_facts: true
   tasks:
     - win_file:
-        name: "C:\Test_temp.txt"
-        state: file
+        name: "C:\\Test_temp"
+        state: directory
       register: file_name
     - debug:
         var: file_name
