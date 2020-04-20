@@ -34,3 +34,7 @@
     - debug:
         msg: "Matched"
       when: data1 == 2
+    - name: "Include the role"
+      include_role:
+        name: role_rename_disk_drives
+      tags: disk
