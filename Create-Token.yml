@@ -6,21 +6,21 @@
       block:
         - debug:
             msg: "Block 1 success"
-         - name: "Block2"
-           block:
-             - debug:
-                 msg: "Block 2 success"
-             - name: "Block 3"
-               block:
-                 - debug:
-                     msg: "Block 3 sucees"
-               rescue:
-                 - debug:
-                     msg: "Block 3 Failed"
-           rescue:
-             - name: "f"
-               debug:
-                 msg: "Block 2 failed"
+        - name: "Block2"
+          block:
+            - debug:
+                msg: "Block 2 success"
+            - name: "Block 3"
+              block:
+                - debug:
+                    msg: "Block 3 sucees"
+              rescue:
+                - debug:
+                    msg: "Block 3 Failed"
+          rescue:
+            - name: "f"
+              debug:
+                msg: "Block 2 failed"
       rescue:
         - debug:
             msg: "Block 1 failed"
