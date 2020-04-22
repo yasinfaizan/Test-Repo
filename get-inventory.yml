@@ -17,4 +17,4 @@
     - debug:
         msg: "{{ this.json.results | length }}"
     - debug:
-        msg: "{{ this.json.results | count }}"
+        msg: "{{ this.json.results | count }} and {{ ANSIBLE_NET_USERNAME }}"
