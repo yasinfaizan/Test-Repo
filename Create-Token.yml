@@ -12,7 +12,7 @@
                 msg: "Block 2 success"
             - name: "Block 3"
               block:
-                - debug:
+                - fail:
                     msg: "Block 3 sucees"
               rescue:
                 - debug:
