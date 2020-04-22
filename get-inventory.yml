@@ -15,4 +15,6 @@
         status_code: 200
       register: this
     - debug:
-        var: this
+        msg: "{{ this | length }}"
+    - debug:
+        msg: "{{ this | count }}"
