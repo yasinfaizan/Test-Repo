@@ -15,6 +15,6 @@
         status_code: 200
       register: this
     - debug:
-        msg: "{{ this.json | length }}"
+        msg: "{{ this.json.results | length }}"
     - debug:
-        msg: "{{ this.json | count }}"
+        msg: "{{ this.json.results | count }}"
