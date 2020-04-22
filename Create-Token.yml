@@ -1,0 +1,31 @@
+---
+- hosts: all
+  gather_facts: true
+  tasks:
+    - name: "Block1"
+      block:
+        - debug:
+            msg: "Block 1 success"
+        - name: "Block2"
+          block:
+            - fail:
+                msg: "Block 2 success"
+            - name: "Block 3"
+              block:
+                - fail:
+                    msg: "Block 3 sucees"
+              rescue:
+                - debug:
+                    msg: "Block 3 Failed"
+          rescue:
+            - name: "f"
+              debug:
+                msg: "Block 2 failed"
+      rescue:
+        - debug:
+            msg: "Block 1 failed"
+    - name: "Include the role"
+      include_role:
+        name: role_rename_disk_drives
+      ignore_errors: yes
+      tags: disk

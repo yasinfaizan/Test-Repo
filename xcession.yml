@@ -1,0 +1,39 @@
+---
+- hosts: "{{ serverIP }}"
+  gather_facts: true
+  tasks:
+    - name: "Include Sophos Role"
+      debug:
+        msg: "Sophos Playbook gets triggered"
+      when:
+        - agents.appSophos is defined
+        - agents.appSophos == true
+    - name: "Include SCOM Role"
+      debug:
+        msg: "SCOM Playbook gets triggered"
+      when:
+        - agents.appSCOM is defined
+        - agents.appSCOM == true
+    - name: "Include Flexara Role"
+      debug:
+        msg: "Flexara Playbook gets triggered"
+      when:
+        - agents.appFlexara is defined
+        - agents.appFlexara == true
+    - name: "Include Splunk Role"
+      debug:
+        msg: "Splunk Playbook gets triggered"
+      when:
+        - agents.appSplunk is defined
+        - agents.appSplunk == true
+    - name: "Change network adapter"
+      debug:
+        msg: "This will change the network adapter"
+    - name: "Include Features Role"
+      debug:
+        msg: "Webserver gets installed"
+      when: windowsServerRoles[0] == 'webserver'
+    - name: "Include Features Role"
+      debug:
+        msg: "PrintServer gets installed"
+      when: windowsServerRoles[1] == 'printserver'

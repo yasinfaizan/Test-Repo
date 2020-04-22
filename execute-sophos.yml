@@ -1,0 +1,9 @@
+---
+- hosts: all
+  gather_facts: true
+  tasks:
+    - debug:
+        msg: "This playbook installs sophos--{{ serverIP }}"
+    - set_stats:
+        data:
+          next_var: "Splunk installation started"

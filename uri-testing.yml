@@ -1,0 +1,25 @@
+---
+- hosts: all
+  gather_facts: true
+  tasks:
+    - debug:
+        msg: "{{ ansible_hostname }}"
+    - name: Test URI
+      uri:
+        url: https://jsonplaceholder.typicode.com/todos/1
+        return_content: yes
+      register: this_var
+      delegate_to: localhost
+    - debug:
+        var: this_var
+    - win_shell: |
+          $env:ComputerName
+      register: this
+    - debug:
+        var: this
+    - shell: whoami
+      register: shell_user
+      delegate_to: localhost
+      
+    - debug:
+        var: shell_user
