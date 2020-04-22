@@ -4,7 +4,7 @@
   tasks:
     - set_fact:
         sophos_v: 123
-      when: "'webserver' in windowsServerRoles"
+      when: "'webserver' in {{windowsServerRoles | lower }}"
     - name: "Include the role"
       include_role:
         name: role_rename_disk_drives
