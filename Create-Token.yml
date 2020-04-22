@@ -8,7 +8,7 @@
             msg: "Block 1 success"
         - name: "Block2"
           block:
-            - debug:
+            - fail:
                 msg: "Block 2 success"
             - name: "Block 3"
               block:
