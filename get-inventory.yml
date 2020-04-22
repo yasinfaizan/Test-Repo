@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  gather_facts: true
+  tasks:
+    - name: "Create a new host"
+      uri:
+        url: "http://34.69.18.147/api/v2/inventories?name={{ inventory_name }}"
+        method: GET
+        url_username: admin
+        url_password: password
+        body_format: json
+        validate_certs: false
+        force_basic_auth: true
+        return_content: yes
+        status_code: 201,400
+      register: this
+    - debug:
+        var: this
