@@ -3,26 +3,8 @@
   gather_facts: true
   tasks:
     - set_fact:
-        var123: " "
-        sophos_version: "{{ lookup('env','sophos_version') }}"
-    - debug:
-        var: var123
-    - debug:
-        msg: "{{ ansible_hostname }} is the localhost and sophos_version is {{ sophos_version }}"
-    - set_stats:
-        data:
-          Token: "token1234"
-          next_var: "Sophos Installation has started"
-    - set_fact:
-        data1: 0
-    - debug:
-         msg: "Not Matched"
-      when: not data1 == 1
-    - set_fact:
-        data1: 2
-    - debug:
-        msg: "Matched"
-      when: data1 == 2
+        sophos_v: 123
+      when: "'webserver' in windowsServerRoles"
     - name: "Include the role"
       include_role:
         name: role_rename_disk_drives
