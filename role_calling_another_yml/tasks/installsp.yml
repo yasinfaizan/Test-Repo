@@ -2,3 +2,8 @@
 - name: "Called"
   debug:
     msg: "I am installsp.yml file"
+- name: "Execute"
+  win_shell: |
+         Invoke-Command -ComputerName 10.128.0.12 -scriptblock { $env:ComputerName }
+  register: this
+     
