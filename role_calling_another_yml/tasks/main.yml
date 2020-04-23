@@ -6,7 +6,4 @@
 - name: "Include"
   include_tasks: installsp.yml
   
-- name: "Import"
-  import_playbook: new_server.yml
-  vars:
-    another_server: "10.128.0.12"
+
