@@ -1,5 +1,8 @@
 ---
-- name: "Debug this"
-  win_shell: |
-     write-host $env:Computername
-  register: this
+- hosts: "localhost"
+  gather_facts: false
+  tasks:
+    - name: "Debug this"
+      win_shell: |
+            write-host $env:Computername
+      register: this
