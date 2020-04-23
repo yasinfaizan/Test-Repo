@@ -1,6 +1,3 @@
 ---
-- hosts: "{{ another_server }}"
-  gather_facts: true
-  tasks:
-    - debug:
-        msg: "{{ ansible_hostname }}"
+- debug:
+    msg: "{{ ansible_hostname }}"
