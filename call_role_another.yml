@@ -10,3 +10,5 @@
         
 - name: "Import playbook"
   import_playbook: another_server.yml
+  vars:
+    another_server: "10.128.0.12"
