@@ -1,4 +1,5 @@
 ---
 - name: "Debug this"
-  debug:
-    msg: "{{ ansible_hostname }}"
+  win_shell: |
+     write-host $env:Computername
+  register: this
