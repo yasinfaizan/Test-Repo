@@ -1,4 +1,4 @@
 | Day     | Meal    | Price | Link |
 | --------|---------|-------|------|
-| Monday  | pasta   | $6    |  visst [this link](https://github.com/yashfaizan/Test-Repo/blob/master/role_import_playbook/README.md) to know more |
+| Monday  | pasta   | $60    |  visst [this link](https://github.com/yashfaizan/Test-Repo/blob/master/role_import_playbook/README.md) to know more |
 | Tuesday | chicken | $10    | Links are also auto-detected in text: http://example.com/ |
