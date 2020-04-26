@@ -22,5 +22,5 @@
           set_fact:
             inv_id: "{{ item.id }}"
           when: item.name == "Windows"
-      with_sequence: count= inv_count
+      with_items: "{{ this.json.results }}"
         
