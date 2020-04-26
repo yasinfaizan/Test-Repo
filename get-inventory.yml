@@ -4,7 +4,7 @@
   tasks:
     - name: "Create a new host"
       uri:
-        url: "http://34.69.18.147/api/v2/inventories"
+        url: "http://10.128.0.11/api/v2/inventories"
         method: GET
         url_username: admin
         url_password: password
