@@ -16,3 +16,5 @@
       register: this
     - debug:
         msg: "{{ this.json.results | length }}"
+    - debug:
+        var: this
