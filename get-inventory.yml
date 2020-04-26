@@ -17,11 +17,8 @@
     - name: "Start the block"
       block:
         - name: "Name of Inv"
-          set_fact:
-            Inv_name: "{{ this.json.results[item].id }}"
-          when: this.json.results[item] == "Windows"
+          debug:
+            msg: "{{ item }}"
           with_sequence: end=3
-        - debug:
-            var: Inv_name
       when: this.json.results | count  > 0
         
