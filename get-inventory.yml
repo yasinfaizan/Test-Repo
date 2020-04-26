@@ -19,6 +19,6 @@
         - name: "Name of Inv"
           debug:
             msg: "{{ item.name }}"
-          with_items: "{{ this.json.results | list }}"
+          with_items: "{{ this.json.results }}"
       when: this.json.results | count  > 0
         
