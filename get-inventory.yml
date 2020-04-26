@@ -17,12 +17,8 @@
     - name: "Start the block"
       block:
         - name: "Name of Inv"
-          block:
-            - name: "Set INV"
-              set_fact:
-                inv_name: "{{ item.name }}"
-            - debug:
-                msg: "{{ inv_name }}"
+          debug:
+            msg: "{{ items.name }}"
           with_items: this.json.results
       when: this.json.results | count  > 0
         
