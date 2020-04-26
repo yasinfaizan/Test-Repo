@@ -16,11 +16,8 @@
       register: this
     - set_fact:
         inv_count: "{{ this.json.results | count }}"
-    
-    - block:
-        - name: "Get the ID when Windows"
-          set_fact:
-            inv_id: "{{ item.id }}"
-          when: item.name == "Windows"
-      with_items: "{{ this.json.results }}"
+    - set_fact:
+        inv_names: "{{ query('inventory_hostnames', 'all') }}"
+    - debug:
+        var: inv_names
         
