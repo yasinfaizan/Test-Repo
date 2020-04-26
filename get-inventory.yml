@@ -23,7 +23,7 @@
           set_fact:
             inv_id: "{{ this.json.results[item | int -1].id }}"
           when: this.json.results[item | int -1].name == "Windows"
-          with_sequence: count=inv_count
+          with_sequence: count="{{inv_count}}"
         - debug:
             var: inv_id
       when: inv_count | count  > 0
