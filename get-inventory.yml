@@ -14,14 +14,17 @@
         return_content: yes
         status_code: 200
       register: this
+    - name: "get the count"
+      set_fact:
+        inv_count: "{{ this.json.results | count }}"
     - name: "Start the block"
       block:
         - name: "Name of Inv"
           set_fact:
             inv_id: "{{ this.json.results[item | int -1].id }}"
           when: this.json.results[item | int -1].name == "Windows"
-          with_sequence: count=3
+          with_sequence: count=inv_count
         - debug:
             var: inv_id
-      when: this.json.results | count  > 0
+      when: inv_count | count  > 0
         
