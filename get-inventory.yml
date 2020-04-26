@@ -18,7 +18,7 @@
       block:
         - name: "Name of Inv"
           debug:
-            msg: "{{ items.name }}"
+            msg: "{{ item.name }}"
           with_items: this.json.results
       when: this.json.results | count  > 0
         
