@@ -18,7 +18,7 @@
       block:
         - name: "Name of Inv"
           set_fact:
-            Inv_name: item.id
+            Inv_name: "{{ item.id }}"
           when: item.name == "Windows"
           with_items: "{{ this.json.results }}"
         - debug:
