@@ -14,10 +14,15 @@
         return_content: yes
         status_code: 200
       register: this
-    - set_fact:
-        inv_count: "{{ this.json.results | count }}"
-    - set_fact:
-        inv_names: "{{ query('inventory_hostnames', 'all') }}"
-    - debug:
-        var: inv_names
+    - name: "Start the block"
+      block:
+        - name: "Name of Inv"
+          block:
+            - name: "Set INV"
+              set_fact:
+                inv_name: "{{ item.name }}"
+            - debug:
+                msg: "{{ inv_name }}"
+          with_items: this.json.results
+      when: this.json.results | count  > 0
         
