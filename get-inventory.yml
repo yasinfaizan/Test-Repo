@@ -14,7 +14,13 @@
         return_content: yes
         status_code: 200
       register: this
-    - debug:
-        msg: "{{ this.json.results | length }}"
-    - debug:
-        var: this
+    - set_fact:
+        inv_count: "{{ this.json.results | count }}"
+    
+    - block:
+        - name: "Get the ID when Windows"
+          set_fact:
+            inv_id: "{{ item.id }}"
+          when: item.name == "Windows"
+      with_sequence: count= inv_count
+        
