@@ -20,7 +20,7 @@
           set_fact:
             Inv_name: "{{ this.json.results[item].id }}"
           when: this.json.results[item] == "Windows"
-          with_items: count=3
+          with_sequence: end=3
         - debug:
             var: Inv_name
       when: this.json.results | count  > 0
