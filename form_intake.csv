@@ -1,8 +1,2 @@
 ﻿Servername,Domain name,Datastore,Test,datacenter,Cluster,ESXi Hostname,vCPU,vMEM,TemplateName,folder,Dummy Column,vLAN Fe,IP address Fe,Netmask Fe,Gateway Fe,DNS1,DNS2,Add Additional Network (yes/no),vLAN Mgt,IP address Mgt,Netmask Mgt,Gateway Mgt,vLAN Backup,IP address Backup,Netmask Backup,Gateway Backup,Location,Security zone,Operating System,A or NL account names,Add Additional Disks (yes/no),SAN storage class D,Disk Size D in GB,SAN storage class E,Disk Size E,Disk Details
 demo-1,b,c,d,e,f,g,2,4096,Windows-2k16,/Folder,,vLAN,,,,,,,,,,,,,,,,,,,yes,Storagr1,5,storg2,10,"[{ ""diskNumber"": 1, ""currentDriveLetter"": """", ""newDriveLetter"": ""D"", ""newDiskName"": ""Storage"", ""diskSize"": 100 ,""diskStorage"": ""NL-Gold-01""}, { ""diskNumber"": 2, ""currentDriveLetter"": """", ""newDriveLetter"": ""H"", ""newDiskName"": ""BackUp"", ""diskSize"": 150,""diskStorage"": ""NL-Gold-01"" },  {  ""diskNumber"": 3, ""currentDriveLetter"": """", ""newDriveLetter"": ""I"", ""newDiskName"": ""Disk1"",  ""diskSize"": 80,""diskStorage"": ""NL-Gold-01"" },    {     ""diskNumber"": 4,     ""currentDriveLetter"": """",     ""newDriveLetter"": ""J"",     ""newDiskName"": ""Disk2"",     ""diskSize"": 200,""diskStorage"": ""N-Gold-01"" }    ]"
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,NlK,,,,
