@@ -20,7 +20,7 @@
         
     - meta: refresh_inventory
     - pause:
-        minutes: 2
+        minutes: 1
 - hosts: "10.128.0.13"
   gather_facts: true
   tasks:
