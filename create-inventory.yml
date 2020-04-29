@@ -17,7 +17,8 @@
       register: this
     - debug:
         var: this
-        
+    - pause:
+        minutes: 5
     - meta: refresh_inventory
     - pause:
         minutes: 10
