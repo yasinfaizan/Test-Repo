@@ -4,12 +4,12 @@
   tasks:
     - name: "Create a new host"
       uri:
-        url: "http://35.222.13.103/api/v2/inventories/2/hosts/"
+        url: "http://34.71.248.65/api/v2/inventories/2/hosts/"
         method: POST
         url_username: admin
         url_password: password
         body_format: json
-        body: { "name": "bbc-test-new-test", "description": "test server for bbc", "enabled": true}
+        body: { "name": "10.128.0.13", "description": "test server for bbc", "enabled": true}
         validate_certs: false
         force_basic_auth: true
         return_content: yes
@@ -17,5 +17,14 @@
       register: this
     - debug:
         var: this
-      
+        
+    - meta: refresh_inventory
+    - pause:
+        minutes: 2
+- hosts: "{{ 10.128.0.13 }}"
+  gather_facts: true
+  tasks:
+    - name: "run"
+      include_role:
+        name: role_calling_another_yml
         
