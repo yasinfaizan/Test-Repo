@@ -17,15 +17,5 @@
       register: this
     - debug:
         var: this
-    - pause:
-        minutes: 5
-    - meta: refresh_inventory
-    - pause:
-        minutes: 10
-- hosts: "10.128.0.13"
-  gather_facts: true
-  tasks:
-    - name: "run"
-      include_role:
-        name: role_calling_another_yml
+
         
