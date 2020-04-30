@@ -7,9 +7,9 @@
         va1: "5,123"
         va2: "5,312"
     - debug:
-        var: va1 | int
+        var: va1 | regex_replace('^,', '') |  int
     - debug:
-        msg: "{{ va2 | int }}"
+        msg: "{{ va2 | regex_replace('^,', '')| int }}"
     - debug:
         msg: "Rebooted"
       when: not (va1|int == va2| int)
