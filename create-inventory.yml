@@ -2,10 +2,10 @@
 - hosts: localhost
   gather_facts: true
   tasks:
-     - set_fact:
-         ansible_inv: "{{ lookup('env','ansible_inv') }}"
-     - name: "Create a new host"
-       uri:
+    - set_fact:
+        ansible_inv: "{{ lookup('env','ansible_inv') }}"
+    - name: "Create a new host"
+      uri:
         url: "http://10.128.0.11/api/v2/inventories/?name={{ ansible_inv }}"
         method: GET
         url_username: admin
