@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  gather_facts: false
+  connection: local
+  tasks:
+    - set_fact:
+        va1: "5"
+        va2: "6"
+    - debug:
+        msg: "Rebooted"
+      when: not (va1|int == va2| int)
+    - debug:
+        msg: "No reboot"
+      when: (va1|int == va2|int)
