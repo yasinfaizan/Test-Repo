@@ -2,9 +2,23 @@
 - hosts: localhost
   gather_facts: true
   tasks:
+     - set_fact:
+         ansible_inv: "{{ lookup('env','ansible_inv') }}"
+     - name: "Create a new host"
+      uri:
+        url: "http://10.128.0.11/api/v2/inventories/?name={{ ansible_inv }}"
+        method: GET
+        url_username: admin
+        url_password: password
+        body_format: json
+        validate_certs: false
+        force_basic_auth: true
+        return_content: yes
+        status_code: 200
+      register: this
     - name: "Create a new host"
       uri:
-        url: "http://34.71.248.65/api/v2/inventories/2/hosts/"
+        url: "http://34.71.248.65/api/v2/inventories/{{ this.json.results[0]['id']/hosts/"
         method: POST
         url_username: admin
         url_password: password
