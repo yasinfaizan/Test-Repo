@@ -4,8 +4,11 @@
   connection: local
   tasks:
     - set_fact:
-        va1: "5"
-        va2: "5"
+        va1: "5,123"
+        va2: "5,312"
+    - debug:
+        var: va1 | int
+        var: va2 | int
     - debug:
         msg: "Rebooted"
       when: not (va1|int == va2| int)
