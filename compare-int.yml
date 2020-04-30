@@ -8,7 +8,8 @@
         va2: "5,312"
     - debug:
         var: va1 | int
-        var: va2 | int
+    - debug:
+        msg: "{{ va2 | int }}"
     - debug:
         msg: "Rebooted"
       when: not (va1|int == va2| int)
