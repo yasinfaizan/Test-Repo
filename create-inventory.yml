@@ -18,7 +18,7 @@
       register: this
     - name: "Create a new host"
       uri:
-        url: "http://34.71.248.65/api/v2/inventories/{{ this.json.results[0]['id']/hosts/"
+        url: "http://34.71.248.65/api/v2/inventories/{{ this.json.results[0]['id'] }}/hosts/"
         method: POST
         url_username: admin
         url_password: password
