@@ -5,7 +5,7 @@
   tasks:
     - set_fact:
         va1: "5"
-        va2: "6"
+        va2: "5"
     - debug:
         msg: "Rebooted"
       when: not (va1|int == va2| int)
