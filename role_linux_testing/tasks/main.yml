@@ -1,0 +1,5 @@
+---
+# tasks file for role_linux_testing
+- name: "Display the vars"
+  debug:
+    msg: "{{ build_version }} {{ build_name }} {{ windows_flavour }}"

@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  gather_facts: false
+  connection: local
+  pre_tasks:
+    - name: "Include vars file"
+      include_vars:
+        - windows_vars.yml
+        - all_vars.yml
+  tasks:
+
+    - name: "Include | role"
+      include_role:
+        name: role_linux_testing
