@@ -4,9 +4,7 @@
   connection: local
   pre_tasks:
     - name: "Include vars file"
-      include_vars:
-        - windows_vars.yml
-        - all_vars.yml
+      include_vars: windows_vars.yml
   tasks:
 
     - name: "Include | role"
