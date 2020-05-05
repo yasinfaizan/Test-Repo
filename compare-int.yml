@@ -18,4 +18,4 @@
       when: (va1|int == va2|int)
     - set_stats:
         data:
-          master_workflow_id: "{{ workflow_job_template }}"
+          master_workflow_id: "{{ tower_workflow_job_template }}"
