@@ -16,3 +16,6 @@
     - debug:
         msg: "No reboot"
       when: (va1|int == va2|int)
+    - set_stats:
+        data:
+          master_workflow_id: "{{ tower_job_id }}"
