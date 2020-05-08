@@ -1,14 +1,7 @@
 ---
-- hosts: "{{ serverIP }}"
+- hosts: all
   gather_facts: false
   tasks:
     - name: "Include"
       include_role:
         name: role_calling_another_yml
-      vars:
-        another_serer: "10.128.0.12"
-        
-- name: "Import playbook"
-  import_playbook: another_server.yml
-  vars:
-    another_server: "10.128.0.12"
