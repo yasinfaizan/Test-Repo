@@ -3,7 +3,16 @@
 - name: "call"
   debug:
     msg: "call another yaml file"
+- name: "get adapter"
+  win_shell: |
+         get-netadapter | ?{$_.Name -eq "Ethernet"} | select -ExpandProperty Name
+  register: nic_name
+- debug:
+    var: nic_name.stdout_lines
+- debug:
+    msg: "{{ nic_name.stdout_lines[0] }}"
 - name: "Include"
   include_tasks: installsp.yml
+  
   
 
