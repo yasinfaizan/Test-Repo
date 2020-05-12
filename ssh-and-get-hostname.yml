@@ -1,0 +1,9 @@
+---
+- hosts: "{{ severIP }}"
+  gather_facts: false
+  tasks:
+    - name: "Fetch | hostname"
+      shell: cat /etc/hostname
+      register: host_name
+    - debug:
+        var: host_name
