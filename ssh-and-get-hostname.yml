@@ -1,5 +1,5 @@
 ---
-- hosts: "{{ severIP }}"
+- hosts: "{{ serverIP }}"
   gather_facts: false
   tasks:
     - name: "Fetch | hostname"
