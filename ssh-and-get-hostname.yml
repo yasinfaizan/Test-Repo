@@ -16,6 +16,3 @@
         - fail:
             msg: failed
       when: 2 != 1
-      rescue:
-        - debug:
-            msg: "failed in block"
