@@ -5,5 +5,17 @@
     - name: "Fetch | hostname"
       shell: cat /etc/hostname
       register: host_name
-    - debug:
-        var: host_name
+    - name: "block | success"
+      block:
+        - debug:
+            msg: success
+      when: "par" == "par"
+     
+    - name: "block | failed"
+      block:
+        - fail:
+            msg: failed
+      when: "para" != "par"
+      rescue:
+        - debug:
+            msg: "failed in block"
