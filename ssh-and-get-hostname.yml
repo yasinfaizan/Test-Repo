@@ -9,13 +9,13 @@
       block:
         - debug:
             msg: success
-      when: "par" == "par"
+      when: 1 == 1
      
     - name: "block | failed"
       block:
         - fail:
             msg: failed
-      when: "para" != "par"
+      when: 2 != 1
       rescue:
         - debug:
             msg: "failed in block"
