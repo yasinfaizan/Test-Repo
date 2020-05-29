@@ -3,6 +3,5 @@
   gather_facts: true
   tasks:
     - debug:
-        msg: "{{ ansible_hostname }}"
-    - debug:
-        msg: " This is the extra varibale {{ e_var1 }}"
+        msg: '{{ lookup("env", "ANSIBLE_NET_USERNAME") }}'
+    
